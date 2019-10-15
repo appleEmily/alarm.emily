@@ -10,11 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let alarm = Alarm()
+    @IBOutlet weak var sleepTimepicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sleepTimepicker.datePickerMode = UIDatePicker.Mode.time
+        sleepTimepicker.setDate(Date(), animated: false)
         // Do any additional setup after loading the view.
     }
-
+    @IBAction func alarmWasSet(_ sender: Any) {
+    }
+    
 
 }
 

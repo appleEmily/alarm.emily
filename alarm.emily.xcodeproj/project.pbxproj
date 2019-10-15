@@ -15,6 +15,9 @@
 		A19EEF1423541B6A00D1FA9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19EEF1223541B6A00D1FA9D /* LaunchScreen.storyboard */; };
 		A19EEF1F23541B6A00D1FA9D /* alarm_emilyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19EEF1E23541B6A00D1FA9D /* alarm_emilyTests.swift */; };
 		A19EEF2A23541B6A00D1FA9D /* alarm_emilyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19EEF2923541B6A00D1FA9D /* alarm_emilyUITests.swift */; };
+		A19EEF382354D52B00D1FA9D /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19EEF372354D52B00D1FA9D /* AlarmViewController.swift */; };
+		A19EEF3A2354D5FA00D1FA9D /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19EEF392354D5FA00D1FA9D /* Alarm.swift */; };
+		A19EEF3C2354DA0C00D1FA9D /* currentTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19EEF3B2354DA0C00D1FA9D /* currentTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		A19EEF2523541B6A00D1FA9D /* alarm.emilyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = alarm.emilyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19EEF2923541B6A00D1FA9D /* alarm_emilyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alarm_emilyUITests.swift; sourceTree = "<group>"; };
 		A19EEF2B23541B6A00D1FA9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A19EEF372354D52B00D1FA9D /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		A19EEF392354D5FA00D1FA9D /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		A19EEF3B2354DA0C00D1FA9D /* currentTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				A19EEF0723541B6500D1FA9D /* AppDelegate.swift */,
 				A19EEF0923541B6500D1FA9D /* SceneDelegate.swift */,
 				A19EEF0B23541B6500D1FA9D /* ViewController.swift */,
+				A19EEF372354D52B00D1FA9D /* AlarmViewController.swift */,
+				A19EEF392354D5FA00D1FA9D /* Alarm.swift */,
+				A19EEF3B2354DA0C00D1FA9D /* currentTime.swift */,
 				A19EEF0D23541B6500D1FA9D /* Main.storyboard */,
 				A19EEF1023541B6A00D1FA9D /* Assets.xcassets */,
 				A19EEF1223541B6A00D1FA9D /* LaunchScreen.storyboard */,
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19EEF382354D52B00D1FA9D /* AlarmViewController.swift in Sources */,
 				A19EEF0C23541B6500D1FA9D /* ViewController.swift in Sources */,
+				A19EEF3A2354D5FA00D1FA9D /* Alarm.swift in Sources */,
 				A19EEF0823541B6500D1FA9D /* AppDelegate.swift in Sources */,
+				A19EEF3C2354DA0C00D1FA9D /* currentTime.swift in Sources */,
 				A19EEF0A23541B6500D1FA9D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
