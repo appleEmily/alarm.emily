@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
-
+    
     let alarm = Alarm()
     @IBOutlet weak var sleepTimepicker: UIDatePicker!
     
@@ -21,17 +22,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if alarm.sleepTimer != nil {
-            alarm.stopTimer()
-        }
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        if alarm.sleepTimer != nil {
+//            alarm.sleepTimer?.invalidate()
+//            alarm.audioPlayer.stop()
+//            alarm.sleepTimer = nil
+//            //alarm.audioPlayer.stop()
+//            //        if alarm.sleepTimer != nil{
+//            //            alarm.stopTimer()
+//            //        }
+//        }
+//    }
     @IBAction func alarmWasSet(_ sender: Any) {
         alarm.selectedWakeUpTime = sleepTimepicker.date
         alarm.runTimer()
         performSegue(withIdentifier: "setToSleeping", sender: nil)
     }
     
-
+    
 }
 

@@ -25,7 +25,7 @@ class CurrentTime {
         //現在の時間をフォーマットに従って文字列化を行う
         let timezoneDate = df.string(from: Date())
         currentTime = timezoneDate
-        self.delegate?.updateTime(currentTime!)
+        delegate?.updateTime(currentTime!)
     }
     
 }

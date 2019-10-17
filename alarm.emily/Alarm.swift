@@ -25,26 +25,26 @@ class Alarm {
         if seconds != 0{
             seconds -= 1
         } else {
+            //elseはsleepTimer == 0
+            //タイマーを止める。
             sleepTimer?.invalidate()
             sleepTimer = nil
+            do {
+                let soundName: String = "port1"
+                let type: String! = "mp3"
+                let soundFilePath = Bundle.main.path(forResource: soundName, ofType: type)!
+
+                let fileURL = URL(fileURLWithPath: soundFilePath)
+
+                audioPlayer = try AVAudioPlayer(contentsOf: fileURL)
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print("could not load file")
+            }
             
-            
+            audioPlayer.play()
         }
-        do {
-            let soundName: String = "port1"
-            let type: String! = "mp3"
-            let soundFilePath = Bundle.main.path(forResource: soundName, ofType: type)!
-            
-            let fileURL = URL(fileURLWithPath: soundFilePath)
-            
-            audioPlayer = try AVAudioPlayer(contentsOf: fileURL)
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print("could not load file")
-        }
-        
-        audioPlayer.play()
     }
     private func calculateInterval(userAwakeTime:Date)-> Int{
         var interval = Int(userAwakeTime.timeIntervalSinceNow)
@@ -56,13 +56,16 @@ class Alarm {
         return interval - seconds
     }
     
-    func stopTimer(){
-        if sleepTimer != nil {
-            sleepTimer?.invalidate()
-            sleepTimer = nil
-        } else {
-            audioPlayer.stop()
-        }
-    }
+//    func stopTimer(){
+//        
+//        if sleepTimer != nil {
+//            sleepTimer?.invalidate()
+//            audioPlayer.stop()
+//            sleepTimer = nil
+//    }
+    //else {
+    //            audioPlayer.stop()
+    //
+    //        }
     
 }
