@@ -20,7 +20,16 @@ class ViewController: UIViewController {
         sleepTimepicker.setDate(Date(), animated: false)
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if alarm.sleepTimer != nil {
+            alarm.stopTimer()
+        }
+    }
     @IBAction func alarmWasSet(_ sender: Any) {
+        alarm.selectedWakeUpTime = sleepTimepicker.date
+        alarm.runTimer()
+        performSegue(withIdentifier: "setToSleeping", sender: nil)
     }
     
 

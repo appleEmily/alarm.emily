@@ -29,7 +29,7 @@
                                 </state>
                                 <connections>
                                     <action selector="alarmWasSet:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uCe-c4-345"/>
-                                    <segue destination="92y-MS-qGm" kind="presentation" id="kXG-6i-Ktm"/>
+                                    <segue destination="92y-MS-qGm" kind="presentation" identifier="setToSleeping" id="kXG-6i-Ktm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIo-83-z8D">
@@ -83,7 +83,6 @@
                         <viewLayoutGuide key="safeArea" id="62s-BC-K4g"/>
                     </view>
                     <connections>
-                        <outlet property="stopBtn" destination="5Ky-ug-rLO" id="sQN-4g-o2Y"/>
                         <outlet property="timeLabel" destination="M6a-qx-vgJ" id="tbg-ca-fSj"/>
                     </connections>
                 </viewController>
