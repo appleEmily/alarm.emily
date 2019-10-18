@@ -31,11 +31,10 @@ class AlarmViewController: UIViewController {
 //        }
 //    }
     @IBAction func stopBtn(_ sender: Any) {
-    
-        alarm.audioPlayer.stop()
-        //alarm.setAudioPlayer()
+
         dismiss(animated: true, completion: nil)
     }
+
     func updateTime(_ time:String) {
         
         timeLabel.text = time

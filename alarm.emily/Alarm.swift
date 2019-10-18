@@ -33,9 +33,9 @@ class Alarm {
                 let soundName: String = "port1"
                 let type: String! = "mp3"
                 let soundFilePath = Bundle.main.path(forResource: soundName, ofType: type)!
-
+                
                 let fileURL = URL(fileURLWithPath: soundFilePath)
-
+                
                 audioPlayer = try AVAudioPlayer(contentsOf: fileURL)
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
                 try AVAudioSession.sharedInstance().setActive(true)
@@ -56,16 +56,16 @@ class Alarm {
         return interval - seconds
     }
     
-//    func stopTimer(){
-//        
-//        if sleepTimer != nil {
-//            sleepTimer?.invalidate()
-//            audioPlayer.stop()
-//            sleepTimer = nil
-//    }
-    //else {
-    //            audioPlayer.stop()
-    //
-    //        }
-    
+    func stopTimer(){
+        
+        if sleepTimer != nil {
+            sleepTimer?.invalidate()
+            sleepTimer = nil
+        }
+        else {
+            audioPlayer.stop()
+            
+        }
+        
+    }
 }
