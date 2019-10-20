@@ -9,6 +9,7 @@
 import UIKit
 
 class AlarmViewController: UIViewController {
+    
     var currentTime = CurrentTime()
     let alarm = Alarm()
     let Time = CurrentTime()

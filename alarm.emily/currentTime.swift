@@ -17,6 +17,7 @@ class CurrentTime {
     init() {
         if timer == nil{
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCurrentTime), userInfo: nil, repeats: true)
+            
         }
     }
     @objc private func updateCurrentTime() {
