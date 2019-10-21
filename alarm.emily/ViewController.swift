@@ -23,11 +23,13 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if alarm.sleepTimer != nil {
+         //AlarmでsleepTimerがnilじゃない場合
+        if alarm.sleepTimer != nil{
+            //再生されているタイマーを止める
             alarm.stopTimer()
-            
         }
     }
+    
     @IBAction func alarmWasSet(_ sender: Any) {
         alarm.selectedWakeUpTime = sleepTimepicker.date
         alarm.runTimer()

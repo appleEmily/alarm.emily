@@ -11,6 +11,8 @@ import AVFoundation
 
 class Alarm {
     var selectedWakeUpTime:Date?
+    let soundName: String = "port1"
+    let type: String! = "mp3"
     var audioPlayer: AVAudioPlayer!
     var sleepTimer: Timer?
     var seconds = 0
@@ -25,24 +27,18 @@ class Alarm {
         if seconds != 0{
             seconds -= 1
         } else {
-            //elseはsleepTimer == 0
             //タイマーを止める。
             sleepTimer?.invalidate()
             sleepTimer = nil
             do {
-                let soundName: String = "port1"
-                let type: String! = "mp3"
                 let soundFilePath = Bundle.main.path(forResource: soundName, ofType: type)!
-                
                 let fileURL = URL(fileURLWithPath: soundFilePath)
-                
                 audioPlayer = try AVAudioPlayer(contentsOf: fileURL)
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch {
                 print("could not load file")
             }
-            
             audioPlayer.play()
         }
     }
@@ -57,15 +53,16 @@ class Alarm {
     }
     
     func stopTimer(){
-        
-        if sleepTimer != nil {
-            sleepTimer?.invalidate()
-            sleepTimer = nil
-        }
-        else {
+        if sleepTimer == nil {
             audioPlayer.stop()
-            
         }
-        
+//        if sleepTimer != nil {
+//            sleepTimer?.invalidate()
+//            sleepTimer = nil
+//            audioPlayer.stop()
+//        }
+//        else {
+//            audioPlayer.stop()
+//        }
     }
 }

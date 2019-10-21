@@ -18,22 +18,12 @@ class AlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-//    override func viewWillDisappear(_ animated: Bool) {
-//        //alarm.audioPlayer.stop()
-//        if alarm.sleepTimer != nil{
-//            alarm.sleepTimer?.invalidate()
-//            alarm.audioPlayer.stop()
-//            alarm.sleepTimer = nil
-//
-//            //alarm.stopTimer()
-//        }
-//    }
+
     @IBAction func stopBtn(_ sender: Any) {
 
         dismiss(animated: true, completion: nil)
+        alarm.stopTimer()
     }
 
     func updateTime(_ time:String) {
