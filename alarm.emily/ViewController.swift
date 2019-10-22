@@ -12,6 +12,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     let alarm = Alarm()
+    
     @IBOutlet weak var sleepTimepicker: UIDatePicker!
     
     override func viewDidLoad() {
@@ -22,20 +23,26 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-         //AlarmでsleepTimerがnilじゃない場合
+    override func viewDidAppear(_ animated: Bool) { //AlarmでsleepTimerがnilじゃない場合
         if alarm.sleepTimer != nil{
             //再生されているタイマーを止める
-            alarm.stopTimer()
+            Alarm().stopTimer()
         }
     }
     
     @IBAction func alarmWasSet(_ sender: Any) {
         alarm.selectedWakeUpTime = sleepTimepicker.date
         alarm.runTimer()
+        
         performSegue(withIdentifier: "setToSleeping", sender: nil)
+        
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "setToSleeping" {
+            let svc = segue.destination as? AlarmViewController
+            svc?.recievedalarm = alarm
+        }
+    }
 }
 

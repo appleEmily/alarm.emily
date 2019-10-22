@@ -53,16 +53,14 @@ class Alarm {
     }
     
     func stopTimer(){
-        if sleepTimer == nil {
+//        if sleepTimer != nil {
+//            audioPlayer.stop()
+//        }
+        if sleepTimer != nil {
+            sleepTimer?.invalidate()
+            sleepTimer = nil
+        } else {
             audioPlayer.stop()
         }
-//        if sleepTimer != nil {
-//            sleepTimer?.invalidate()
-//            sleepTimer = nil
-//            audioPlayer.stop()
-//        }
-//        else {
-//            audioPlayer.stop()
-//        }
     }
 }
