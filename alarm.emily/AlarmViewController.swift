@@ -10,8 +10,9 @@ import UIKit
 
 class AlarmViewController: UIViewController {
     
-    var currentTime = CurrentTime()
+    let recievedTime = CurrentTime()
     var recievedalarm = Alarm()
+    //var currentTime:String!
         
         //ViewController().alarm
     let Time = CurrentTime()
@@ -20,7 +21,9 @@ class AlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let nowTime = recievedTime.currentTime
+        timeLabel.text = nowTime
+        print(nowTime)
     }
 
     @IBAction func stopBtn(_ sender: Any) {
@@ -29,10 +32,11 @@ class AlarmViewController: UIViewController {
             recievedalarm.stopTimer()
     }
 
-    func updateTime(_ time:String) {
-
-        timeLabel.text = currentTime.time
-    }
+//    func updateTime(_ time:String) {
+//
+//        timeLabel.text = time
+//        print(time)
+//    }
     
 }
 

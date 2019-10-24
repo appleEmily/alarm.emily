@@ -22,14 +22,16 @@ class CurrentTime{
         }
     }
 
-    @objc private func updateCurrentTime(){
+    @objc open func updateCurrentTime(){
         //フォーマットの指定
         df.dateFormat = "HH:mm"
         //時刻をUNIXから端末のタイムゾーンにする
         df.timeZone = TimeZone.current
         //現在の時間をフォーマットに従って文字列化を行う
         let timezoneDate = df.string(from: Date())
+        
         currentTime = timezoneDate
-        delegate?.updateTime(currentTime!)
+        //delegate?.updateTime(currentTime!)
+         print(currentTime)
     }
 }
