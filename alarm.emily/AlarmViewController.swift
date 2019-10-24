@@ -25,6 +25,7 @@ class AlarmViewController: UIViewController {
         //print(nowTime)
     }
     override func viewDidAppear(_ animated: Bool) {
+        //delegate したやつ江尾しっかり受け取る
         recievedTime.delegate = self
     }
 
