@@ -21,9 +21,11 @@ class AlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nowTime = recievedTime.currentTime
-        timeLabel.text = nowTime
-        print(nowTime)
+        //timeLabel.text =
+        //print(nowTime)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        recievedTime.delegate = self
     }
 
     @IBAction func stopBtn(_ sender: Any) {
@@ -32,11 +34,11 @@ class AlarmViewController: UIViewController {
             recievedalarm.stopTimer()
     }
 
-//    func updateTime(_ time:String) {
-//
-//        timeLabel.text = time
-//        print(time)
-//    }
+    func updateTime(_ time:String) {
+
+        timeLabel.text = time
+        print(time)
+    }
     
 }
 

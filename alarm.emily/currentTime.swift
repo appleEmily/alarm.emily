@@ -31,7 +31,7 @@ class CurrentTime{
         let timezoneDate = df.string(from: Date())
         
         currentTime = timezoneDate
-        //delegate?.updateTime(currentTime!)
+        delegate?.updateTime(currentTime!)
          print(currentTime)
     }
 }
